@@ -1,0 +1,32 @@
+<h1>Listing Windows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for window <- @windows do %>
+    <tr>
+      <td><%= window.name %></td>
+      <td><%= window.email %></td>
+      <td><%= window.subject %></td>
+      <td><%= window.body %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.window_path(@conn, :show, window) %></span>
+        <span><%= link "Edit", to: Routes.window_path(@conn, :edit, window) %></span>
+        <span><%= link "Delete", to: Routes.window_path(@conn, :delete, window), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Window", to: Routes.window_path(@conn, :new) %></span>

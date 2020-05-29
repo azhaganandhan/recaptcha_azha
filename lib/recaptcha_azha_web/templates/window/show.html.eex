@@ -1,0 +1,28 @@
+<h1>Show Window</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @window.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @window.email %>
+  </li>
+
+  <li>
+    <strong>Subject:</strong>
+    <%= @window.subject %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @window.body %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.window_path(@conn, :edit, @window) %></span>
+<span><%= link "Back", to: Routes.window_path(@conn, :index) %></span>
